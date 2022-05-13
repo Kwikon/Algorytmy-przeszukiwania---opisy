@@ -1,0 +1,31 @@
+Mikołaj Zabiegałowski 
+Algorytmy przeszukiwania
+
+1. Algorytm Brute Force
+Ten algorytm to najłatwiejszy sposób na znalezienie wzorców w tekście. 
+Zasada działania polega na porównaniu liter odpowiadających tekstowi bądź wzorowi,
+zaczynając od pierwszej litery tekstu/wzoru. Jeśli fragment tekstu pasuje, 
+następny znak tekstu jest porównywany z następnym znakiem we wzorcu i tak dalej.
+Jeśli nigdzie nie ma dopasowania algorytm rozpoczyna cały proces wyszukiwania
+od drugiego znaku tekstu i pierwszego znaku wzorca. 
+Jeśli cały wzorzec zostanie znaleziony, algorytm rozpoczyna wyszukiwanie od następnego znaku.
+2. Algorytm Knutha-Morrisa-Pratta
+Algorytm Knutha-Morrisa-Pratta, tanowi rozwinięcie algorytmu naiwnego. 
+Algorytm naiwny wykonuje wiele powtórnych wyszukiwań i jeśli w którejkolwiek literze
+wzorca wystąpi jakakolwiek niespójność, informacje z poprzedniego testu nie są wykorzystywane.
+Algorytm KMP wykorzystuje informacje o możliwości wykonania zmian trybów więcej niż jeden znak.
+3. Algorytm Boyera i Moore’a
+W tym algorytmie, w porównaniu do algorytmu KMP, porównywany jest ostatni znak wzorca. 
+Jeśli znak kontrolny w tekście (indeks x) nie jest zawarty we wzorcu, 
+można przesunąć indeks x o długość wzorca. Jeśli ten znak istnieje,
+wzorzec należy przekonwertować, aby ten znak pasował do odpowiedniego znaku wzorca.
+4. Algorytm Rabina i Karpa
+Algorytm Rabina i Karpa polega na porównaniu na raz całego wzorca i odpowiednich fragmentów tekstu,
+a następnie przekonwertowaniu ich na wartości liczbowe za pomocą odpowiedniej funkcji H. 
+Prawidłowo skonstruowana funkcja H powinna być w stanie wykorzystać te wartości​​​z obliczeń w poprzednim kroku algorytmu.
+
+Ta metoda wykorzystuje funkcję haszującą do znalezienia zestawu podanych wzorców (tj. podciągów) w tekście.
+W przypadku tekstu o długości n znaków i p podciągów o całkowitej długości m, średnia złożoność wynosi O(n+m),
+a zużycie pamięci wynosi O(p). Ale w najgorszym przypadku jego złożoność wynosi O (nm),
+co tłumaczy jego stosunkowo ograniczone zastosowanie. Dla porównania, algorytm wyszukiwania
+ciągów Aho-Corasick ma asymptotyczną złożoność najgorszego przypadku wynoszącą O(m) w użyciu pamięci O(n + m).
